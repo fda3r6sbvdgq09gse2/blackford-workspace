@@ -1,0 +1,165 @@
+# Startup Variables Configuration
+# Single source of truth for company/startup configuration
+# Last updated: 2025-10-16
+#
+# INSTRUCTIONS FOR NEW USERS:
+# 1. Fork claude-workspace-template to create your company workspace
+#    Example: blackford-workspace, acme-workspace, johndoe-workspace
+# 2. Change STARTUP_NAME to your company identifier
+#    Example: "blackford", "acme", "johndoe"
+# 3. Update github_org to your GitHub organization
+# 4. Rename this fork to: {your-company}-workspace (e.g., blackford-workspace)
+# 5. Create projects in the projects/ directory
+#
+# This file is meant to be customized - it's YOUR configuration!
+
+# ============================================================
+# COMPANY/STARTUP INFORMATION
+# ============================================================
+startup:
+  name: "STARTUP_NAME"                    # ⚠️ CHANGE THIS! (e.g., "blackford", "acme")
+  display_name: "Startup Name"            # Human-readable name (e.g., "Blackford Industries")
+  github_org: "startup-github-org"        # Your GitHub organization (e.g., "blackford-inc")
+
+  # Company metadata
+  description: "Company description here"
+  website: "https://example.com"
+  contact_email: "dev@example.com"
+
+  # Used in documentation and attribution
+  _used_in:
+    - "[[README.md:line]]"
+    - "[[docs/CUSTOMIZATION.md:line]]"
+    - "[[projects/*/PROJECT_VARIABLES.yaml:line]]"
+
+# ============================================================
+# USER/CREATOR IDENTITY (For AI Sessions)
+# ============================================================
+# This section helps AI agents understand WHO is working and WHAT the objectives are
+user:
+  # Primary user/creator identity
+  github_username: "github-username"      # ⚠️ CHANGE THIS! Your GitHub username
+  name: "Your Name"                       # Your full name
+  role: "Lead Developer"                  # Your role in the project
+  timezone: "America/New_York"            # Your timezone (for scheduling)
+
+  # Current objectives and context (update as needed)
+  current_focus:
+    - "Building X feature"
+    - "Fixing Y bug"
+    - "Planning Z architecture"
+
+  # Preferences for AI assistance
+  preferences:
+    code_style: "pythonic"                # pythonic | functional | oop | etc
+    verbosity: "concise"                  # concise | detailed | minimal
+    emoji_usage: "minimal"                # none | minimal | normal | enthusiastic
+
+  # Project priorities (helps AI understand what matters)
+  priorities:
+    - "Code quality over speed"
+    - "Security first"
+    - "User experience"
+
+  # Knowledge graph: tracks where user identity is used
+  _used_in:
+    - "[[.git/config:user]]"              # Git configuration
+    - "[[README.md:maintainer]]"          # Documentation
+    - "[[.github/workflows/*.yml:author]]" # CI/CD attribution
+
+# ============================================================
+# FRAMEWORK CONFIGURATION
+# ============================================================
+# ⚠️ IMPORTANT: Framework name comes from claude-dev-framework/VARIABLES.yaml
+#    This is the SINGLE SOURCE OF TRUTH for the framework name
+#    Repository: github.com/fda3r6sbvdgq09gse2/claude-dev-framework
+#    See: claude-dev-framework/VARIABLES.yaml:framework.name
+framework:
+  # Framework source (DO NOT CHANGE unless switching frameworks)
+  source: "Claude-Dev-Framework"              # From VARIABLES.yaml:framework.name
+  display_name: "Claude-Dev-Framework"        # The framework repository name
+
+  # Version pinning - upgrade by changing this ref
+  version: "1.0.0"
+  marketplace_repo: "fda3r6sbvdgq09gse2/claude-dev-framework"
+
+  # Where framework is installed
+  installation_type: "marketplace"        # marketplace | git | mcp
+
+  # Upgrade strategy
+  auto_upgrade: false                     # Set to true for automatic upgrades
+  upgrade_channel: "stable"               # stable | beta | latest
+
+  _used_in:
+    - "[[.claude/settings.json:4]]"      # extraKnownMarketplaces config
+
+# ============================================================
+# PROJECT REGISTRY
+# ============================================================
+# List all projects in this workspace
+projects:
+  # Example project configuration
+  # - name: "book-cataloger"
+  #   description: "Book cataloging system"
+  #   directory: "./projects/book-cataloger"
+  #   status: "active"
+  #   team_lead: "Alice"
+  #   agents_used: ["backend", "frontend", "testing"]
+
+# Add your projects here:
+# - name: "my-first-project"
+#   description: "My first project"
+#   directory: "./projects/my-first-project"
+
+# ============================================================
+# TEAM CONFIGURATION (Optional)
+# ============================================================
+team:
+  # Default team configuration for all projects
+  default_agents:
+    - "backend"
+    - "frontend"
+    - "integration"
+    - "testing"
+
+  # Optional: team member mapping
+  members:
+    # - name: "Alice"
+    #   role: "Lead Developer"
+    #   focus: ["backend", "integration"]
+    # - name: "Bob"
+    #   role: "Frontend Developer"
+    #   focus: ["frontend", "ui"]
+
+# ============================================================
+# ENVIRONMENT CONFIGURATION (Optional)
+# ============================================================
+environments:
+  development:
+    default: true
+  staging:
+    enabled: false
+  production:
+    enabled: false
+
+# ============================================================
+# NOTES FOR USERS
+# ============================================================
+#
+# This file is the single source of truth for your company workspace.
+#
+# WHAT TO CUSTOMIZE:
+#   ✅ startup.name - Your company name
+#   ✅ startup.github_org - Your GitHub organization
+#   ✅ projects - Add your projects here
+#   ✅ team - Add your team members
+#
+# WHAT NOT TO CHANGE:
+#   ❌ framework.source - Leave as "Claude-Dev-Framework"
+#   ❌ framework.marketplace_repo - This is the official framework
+#
+# UPGRADING FRAMEWORK:
+#   To upgrade: Change framework.version from "1.0.0" to "2.0.0"
+#   See docs/UPGRADING.md for detailed instructions
+#
+# ============================================================

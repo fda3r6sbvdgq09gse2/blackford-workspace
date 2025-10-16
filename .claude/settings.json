@@ -1,0 +1,19 @@
+{
+  "$schema": "https://api.claude.com/schemas/settings.json",
+  "extraKnownMarketplaces": {
+    "Claude-Dev-Framework": {
+      "source": {
+        "source": "github",
+        "repo": "fda3r6sbvdgq09gse2/claude-dev-framework",
+        "ref": "v1.0.0"
+      }
+    }
+  },
+  "annotations": {
+    "_comment_1": "This settings file configures Claude Code to use the Claude-Dev-Framework marketplace",
+    "_comment_2": "The framework provides specialized agents for multi-agent development",
+    "_comment_3": "To upgrade: change 'ref' from 'v1.0.0' to 'v2.0.0'",
+    "_comment_4": "See STARTUP_VARIABLES.yaml for company-specific configuration",
+    "_reference": "[[STARTUP_VARIABLES.yaml:39]] - framework.version"
+  }
+}

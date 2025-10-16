@@ -1,0 +1,237 @@
+# PROJECT_VARIABLES.yaml Template
+# Copy this file to your project root: projects/YOUR_PROJECT/PROJECT_VARIABLES.yaml
+#
+# KNOWLEDGE GRAPH SYSTEM:
+# This file uses Obsidian-style bidirectional linking via _used_in arrays
+# Every variable tracks WHERE it's used, building knowledge over time
+# Format: [[file_path:line_number]] or [[file_path:section]]
+#
+# Last updated: 2025-10-16
+
+# ============================================================
+# PROJECT INFORMATION
+# ============================================================
+project:
+  name: "PROJECT_NAME"                    # ⚠️ CHANGE THIS! (e.g., "book-cataloger")
+  version: "0.1.0"                        # Semantic versioning
+  description: "Project description"      # What does this project do?
+  status: "active"                        # active | paused | archived | completed
+
+  # Knowledge graph: Track where project name is used
+  _used_in:
+    - "[[README.md:1]]"                  # Project title
+    - "[[../STARTUP_VARIABLES.yaml:projects]]"  # Registered in workspace
+    - "[[src/__init__.py:__version__]]"  # Code references (if applicable)
+    # Add more as project evolves
+
+# ============================================================
+# INHERITANCE (Single Source of Truth)
+# ============================================================
+inherits:
+  startup_config: "../../STARTUP_VARIABLES.yaml"
+
+  # What gets inherited:
+  # - startup.name (company identifier)
+  # - startup.display_name (company name)
+  # - startup.github_org (GitHub organization)
+  # - framework.version (Claude-Dev-Framework version)
+  # - team.default_agents (default agent list)
+
+  _used_in:
+    - "[[../../STARTUP_VARIABLES.yaml:*]]"  # Pulls all workspace config
+
+# ============================================================
+# TEAM CONFIGURATION
+# ============================================================
+team:
+  lead: "LEAD_NAME"                      # ⚠️ CHANGE THIS! Project lead
+
+  members:
+    - "LEAD_NAME"                        # ⚠️ Add team members
+    # - "Teammate1"
+    # - "Teammate2"
+
+  # Claude-Dev-Framework agents used in this project
+  agents_used:
+    - "backend"                          # Backend development specialist
+    - "frontend"                         # Frontend development specialist
+    - "testing"                          # Testing and QA specialist
+    # - "integration"                    # API integration specialist
+    # - "devops"                         # DevOps and infrastructure
+    # - "documentation"                  # Technical documentation
+    # - "qa-automation"                  # QA automation specialist
+    # - "ux-product"                     # UX/Product specialist
+
+  # Knowledge graph: Where team config is referenced
+  _used_in:
+    - "[[README.md:team-section]]"
+    - "[[docs/CONTRIBUTING.md:contributors]]"  # If exists
+    # Add more as you document team structure
+
+# ============================================================
+# TECHNOLOGY STACK
+# ============================================================
+stack:
+  language: "python"                     # python | javascript | go | rust | java | etc
+  version: "3.11+"                       # Language version requirement
+  framework: "fastapi"                   # Framework (if applicable)
+  database: "postgresql"                 # Database (if applicable)
+  cache: "redis"                         # Caching layer (if applicable)
+  testing: "pytest"                      # Testing framework
+
+  # Dependencies (high-level list, details in requirements.txt/package.json)
+  dependencies:
+    - "requests"
+    - "pydantic"
+    - "sqlalchemy"
+
+  # Knowledge graph: Where stack info is referenced
+  _used_in:
+    - "[[README.md:tech-stack-section]]"
+    - "[[requirements.txt:*]]"           # Python dependencies
+    - "[[Dockerfile:FROM]]"              # Docker base image
+    - "[[.github/workflows/ci.yml:setup]]"  # CI/CD configuration
+    # Accumulates knowledge of where tech choices matter
+
+# ============================================================
+# PROJECT MILESTONES
+# ============================================================
+milestones:
+  - version: "0.1.0"
+    description: "MVP release"
+    due: "2025-12-01"
+    status: "in_progress"
+    _used_in:
+      - "[[CHANGELOG.md:0.1.0]]"
+      - "[[docs/ROADMAP.md:milestone-1]]"
+
+  - version: "0.2.0"
+    description: "Feature X implementation"
+    due: "2025-12-15"
+    status: "planned"
+    _used_in:
+      - "[[docs/ROADMAP.md:milestone-2]]"
+      - "[[issues/feature-x.md]]"  # GitHub issues
+
+  # Knowledge graph: Milestones track their documentation
+  _used_in:
+    - "[[README.md:status-section]]"
+    - "[[docs/ROADMAP.md:*]]"
+    - "[[../STARTUP_VARIABLES.yaml:projects:milestones]]"  # Workspace overview
+
+# ============================================================
+# EXTERNAL INTEGRATIONS
+# ============================================================
+integrations:
+  # Example: REST API integration
+  # - name: "stripe"
+  #   type: "rest-api"
+  #   endpoint: "https://api.stripe.com"
+  #   auth: "api-key"
+  #   _used_in:
+  #     - "[[src/services/payment.py:StripeClient]]"
+  #     - "[[.env.example:STRIPE_API_KEY]]"
+  #     - "[[docs/INTEGRATIONS.md:stripe]]"
+
+  # Example: Database connection
+  # - name: "postgres"
+  #   type: "database"
+  #   connection_string: "postgresql://..."
+  #   _used_in:
+  #     - "[[src/db/connection.py:get_db]]"
+  #     - "[[.env.example:DATABASE_URL]]"
+  #     - "[[docker-compose.yml:postgres-service]]"
+
+  # Knowledge graph: Each integration tracks its usage points
+  _used_in:
+    - "[[docs/INTEGRATIONS.md:*]]"
+    - "[[.env.example:*]]"
+
+# ============================================================
+# DOCUMENTATION STRUCTURE
+# ============================================================
+documentation:
+  architecture: "./docs/ARCHITECTURE.md"
+  api_docs: "./docs/API.md"
+  user_guide: "./docs/USER_GUIDE.md"
+  contributing: "./docs/CONTRIBUTING.md"
+
+  # Knowledge graph: Documentation index
+  _used_in:
+    - "[[README.md:documentation-links]]"
+    - "[[docs/INDEX.md:*]]"  # If you create a docs index
+
+# ============================================================
+# CUSTOM PROJECT VARIABLES
+# ============================================================
+# Add your own project-specific variables here
+# Always include _used_in to track usage!
+
+# Example: Feature flags
+features:
+  enable_auth: true
+  enable_payments: false
+  enable_notifications: true
+
+  _used_in:
+    - "[[src/config.py:Features]]"
+    - "[[src/main.py:conditional-imports]]"
+    - "[[docs/FEATURES.md:*]]"
+
+# Example: Environment-specific configuration
+environments:
+  development:
+    debug: true
+    log_level: "DEBUG"
+    _used_in:
+      - "[[src/config.py:dev_config]]"
+      - "[[.env.development:*]]"
+
+  production:
+    debug: false
+    log_level: "WARNING"
+    _used_in:
+      - "[[src/config.py:prod_config]]"
+      - "[[.env.production:*]]"
+
+# ============================================================
+# KNOWLEDGE GRAPH NOTES
+# ============================================================
+#
+# HOW THE KNOWLEDGE GRAPH WORKS:
+#
+# 1. Every variable can have a _used_in array
+# 2. Format: [[file_path:location]] (Obsidian-style linking)
+# 3. When you use a variable somewhere new, ADD it to _used_in
+# 4. Over time, you build a map of how everything connects
+#
+# BENEFITS:
+# - Know impact of changes (see all usage points)
+# - Find orphaned variables (empty _used_in = unused?)
+# - Onboard new team members (follow the links!)
+# - Documentation writes itself (usage map is documentation)
+#
+# EXAMPLE WORKFLOW:
+# 1. Add new feature flag: features.new_feature = true
+# 2. Use it in code: src/main.py checks new_feature
+# 3. Update knowledge graph: features._used_in += [[src/main.py:line]]
+# 4. Document it: docs/FEATURES.md explains new_feature
+# 5. Update knowledge graph: features._used_in += [[docs/FEATURES.md:section]]
+#
+# Result: The variable "knows" everywhere it's used!
+#
+# ============================================================
+# MAINTENANCE TIPS
+# ============================================================
+#
+# Weekly review:
+# 1. Check for _used_in arrays that haven't grown (stagnant?)
+# 2. Verify references are still valid (files moved/renamed?)
+# 3. Add new usages you discovered this week
+#
+# Monthly review:
+# 1. Generate usage report: grep -r "_used_in" .
+# 2. Visualize connections (tool TBD - could be built!)
+# 3. Share knowledge graph insights with team
+#
+# ============================================================

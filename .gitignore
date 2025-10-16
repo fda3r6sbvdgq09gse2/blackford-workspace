@@ -1,0 +1,218 @@
+# Claude-Workspace-Template .gitignore
+# Workspace-level ignores (projects may have their own .gitignore)
+
+# ==============================================================
+# WORKSPACE FILES
+# ==============================================================
+
+# Session context (may contain sensitive information)
+.ai/context/current_session.md
+.ai/context/active_sprint.md
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ==============================================================
+# EDITOR/IDE
+# ==============================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# ==============================================================
+# OPERATING SYSTEM
+# ==============================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# ==============================================================
+# SECRETS AND CREDENTIALS
+# ==============================================================
+
+# Environment files
+.env
+.env.local
+.env.*.local
+*.env
+
+# Credentials
+**/credentials.json
+**/secrets.json
+**/*_secret*
+**/*-secret*
+**/*.key
+**/*.pem
+**/*.p12
+**/*.pfx
+
+# API keys
+**/api_keys.txt
+**/*_apikey*
+**/*-apikey*
+
+# ==============================================================
+# BUILD ARTIFACTS
+# ==============================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+
+# Rust
+target/
+Cargo.lock
+
+# ==============================================================
+# TESTING
+# ==============================================================
+
+# Coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# ==============================================================
+# DOCUMENTATION
+# ==============================================================
+
+# Generated documentation
+docs/_build/
+docs/.doctrees/
+site/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# ==============================================================
+# LOGS AND DATABASES
+# ==============================================================
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+*.rdb
+
+# ==============================================================
+# CLAUDE CODE SPECIFIC
+# ==============================================================
+
+# Claude Code session data (optional - uncomment if you don't want to track)
+# .claude/sessions/
+# .claude/cache/
+
+# ==============================================================
+# PROJECT-SPECIFIC (Add Below)
+# ==============================================================
+
+# Add your workspace-specific ignores here
+# Example:
+# projects/*/temp/
+# projects/*/local-data/

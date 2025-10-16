@@ -1,6 +1,7 @@
 # Startup Variables Configuration
 # Single source of truth for company/startup configuration
 # Last updated: 2025-10-16
+# Customized for: Blackford Industries
 #
 # INSTRUCTIONS FOR NEW USERS:
 # 1. Fork claude-workspace-template to create your company workspace
@@ -17,14 +18,14 @@
 # COMPANY/STARTUP INFORMATION
 # ============================================================
 startup:
-  name: "STARTUP_NAME"                    # ⚠️ CHANGE THIS! (e.g., "blackford", "acme")
-  display_name: "Startup Name"            # Human-readable name (e.g., "Blackford Industries")
-  github_org: "startup-github-org"        # Your GitHub organization (e.g., "blackford-inc")
+  name: "blackford"                       # Company identifier
+  display_name: "Blackford Industries"    # Human-readable name
+  github_org: "fda3r6sbvdgq09gse2"        # GitHub organization
 
   # Company metadata
-  description: "Company description here"
-  website: "https://example.com"
-  contact_email: "dev@example.com"
+  description: "AI-assisted software development using Claude-Dev-Framework"
+  website: "https://github.com/fda3r6sbvdgq09gse2"
+  contact_email: "dev@blackford.ai"
 
   # Used in documentation and attribution
   _used_in:
@@ -38,16 +39,16 @@ startup:
 # This section helps AI agents understand WHO is working and WHAT the objectives are
 user:
   # Primary user/creator identity
-  github_username: "github-username"      # ⚠️ CHANGE THIS! Your GitHub username
-  name: "Your Name"                       # Your full name
-  role: "Lead Developer"                  # Your role in the project
-  timezone: "America/New_York"            # Your timezone (for scheduling)
+  github_username: "fda3r6sbvdgq09gse2"   # GitHub username
+  name: "Blackford Developer"             # Full name
+  role: "Founder & Lead Developer"        # Role in the project
+  timezone: "America/New_York"            # Timezone
 
   # Current objectives and context (update as needed)
   current_focus:
-    - "Building X feature"
-    - "Fixing Y bug"
-    - "Planning Z architecture"
+    - "Setting up book-cataloger project"
+    - "Establishing AI-assisted development workflow"
+    - "Building knowledge compounding system"
 
   # Preferences for AI assistance
   preferences:
@@ -57,9 +58,9 @@ user:
 
   # Project priorities (helps AI understand what matters)
   priorities:
-    - "Code quality over speed"
-    - "Security first"
-    - "User experience"
+    - "World-class software engineering"
+    - "Knowledge compounding"
+    - "Systematic improvement"
 
   # Knowledge graph: tracks where user identity is used
   _used_in:
@@ -98,18 +99,13 @@ framework:
 # ============================================================
 # List all projects in this workspace
 projects:
-  # Example project configuration
-  # - name: "book-cataloger"
-  #   description: "Book cataloging system"
-  #   directory: "./projects/book-cataloger"
-  #   status: "active"
-  #   team_lead: "Alice"
-  #   agents_used: ["backend", "frontend", "testing"]
-
-# Add your projects here:
-# - name: "my-first-project"
-#   description: "My first project"
-#   directory: "./projects/my-first-project"
+  - name: "book-cataloger"
+    description: "Personal library management system with ISBN scanning and metadata enrichment"
+    directory: "./projects/book-cataloger"
+    status: "active"
+    team_lead: "Blackford Developer"
+    agents_used: ["backend", "frontend", "integration", "testing"]
+    started_date: "2025-10-16"
 
 # ============================================================
 # TEAM CONFIGURATION (Optional)

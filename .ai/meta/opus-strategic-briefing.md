@@ -1,9 +1,10 @@
-# Strategic Review Briefing for Claude Opus
+# Strategic Review Briefing for Claude Opus (via opusplan)
 
 **Date**: 2025-10-16
 **Purpose**: High-level strategic guidance on knowledge compounding system
-**Model**: Claude Opus 4 (strategic planning only)
+**Model**: opusplan (Opus for planning, Sonnet for execution)
 **Token Budget**: ~50K tokens (be concise, focus on strategy)
+**Mode**: PLAN MODE (strategic architecture review)
 
 ---
 

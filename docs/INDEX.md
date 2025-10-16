@@ -10,6 +10,7 @@
 |----------|---------|----------|-----------|
 | **[QUICK_START.md](QUICK_START.md)** | 15-minute walkthrough | Beginners | 20 min |
 | **[CUSTOMIZATION.md](CUSTOMIZATION.md)** | Deep configuration guide | Developers | 45 min |
+| **[TODO_WORKFLOW.md](TODO_WORKFLOW.md)** | Todo workflow integration | All users | 30 min |
 | **[UPGRADING.md](UPGRADING.md)** | Framework upgrade procedures | Maintainers | 30 min |
 | **[ARCHITECTURE.md](ARCHITECTURE.md)** | System design deep dive | Architects | 45 min |
 
@@ -22,6 +23,9 @@
 
 ### I want to customize my workspace
 → Read [CUSTOMIZATION.md](CUSTOMIZATION.md)
+
+### I want to use Claude Code todos effectively
+→ Read [TODO_WORKFLOW.md](TODO_WORKFLOW.md)
 
 ### I need to upgrade the framework
 → Follow [UPGRADING.md](UPGRADING.md)
@@ -56,6 +60,18 @@
 - Best practices
 
 **Key takeaway:** Master variable configuration and project setup
+
+### TODO_WORKFLOW.md (750 lines)
+
+**Sections:**
+- How Claude Code todos work
+- Todo lifecycle and best practices
+- Integration with sprints and knowledge compounding
+- Todo templates (sprint, feature, bugfix)
+- Examples and patterns
+- Knowledge compounding through todos
+
+**Key takeaway:** Use todos to track execution and compound knowledge
 
 ### UPGRADING.md (500 lines)
 

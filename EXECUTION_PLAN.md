@@ -1028,6 +1028,564 @@ Build Project → Extract Learnings → Framework v3.0 → Next Project...
 
 ---
 
+## 📋 Todo Workflow Integration
+
+**Purpose**: Integrate Claude Code's native todo system throughout all phases
+
+**Documentation**: See `docs/TODO_WORKFLOW.md` for complete details
+
+**Key Principle**: Todos track execution, learnings compound knowledge
+
+---
+
+### How Todos Work in This System
+
+```
+Claude Code Todos (real-time tracking)
+    ↓
+Sprint Execution (agents work)
+    ↓
+Retrospective (analyze todo patterns)
+    ↓
+Extract Learnings (what worked?)
+    ↓
+Create Templates (better todos for v2.0)
+    ↓
+Next Project (starts with better todos)
+    ↓
+KNOWLEDGE COMPOUNDS
+```
+
+---
+
+### Todo Integration by Phase
+
+#### Phase 1: Freeze & Tag
+
+**Todos for this phase:**
+
+```python
+TodoWrite([
+  {
+    "content": "Tag claude-dev-framework as v1.0.0",
+    "status": "pending",
+    "activeForm": "Tagging claude-dev-framework"
+  },
+  {
+    "content": "Tag claude-workspace-template as v1.0.0",
+    "status": "pending",
+    "activeForm": "Tagging claude-workspace-template"
+  },
+  {
+    "content": "Verify both tags pushed to GitHub",
+    "status": "pending",
+    "activeForm": "Verifying tags on GitHub"
+  }
+])
+```
+
+**Total Estimated**: 30 minutes
+
+---
+
+#### Phase 2: Create Blackford Workspace
+
+**Todos for this phase:**
+
+```python
+TodoWrite([
+  {
+    "content": "Fork claude-workspace-template to blackford-workspace",
+    "status": "pending",
+    "activeForm": "Forking template repository"
+  },
+  {
+    "content": "Customize STARTUP_VARIABLES.yaml with Blackford info",
+    "status": "pending",
+    "activeForm": "Customizing startup variables"
+  },
+  {
+    "content": "Update knowledge graph _used_in arrays",
+    "status": "pending",
+    "activeForm": "Updating knowledge graph"
+  },
+  {
+    "content": "Update README.md with company information",
+    "status": "pending",
+    "activeForm": "Updating README"
+  },
+  {
+    "content": "Commit and push customizations",
+    "status": "pending",
+    "activeForm": "Committing customizations"
+  }
+])
+```
+
+**Total Estimated**: 1 hour
+
+---
+
+#### Phase 3: Migrate book-cataloger
+
+**Todos for this phase:**
+
+```python
+TodoWrite([
+  {
+    "content": "Copy book-cataloger files to workspace projects/",
+    "status": "pending",
+    "activeForm": "Copying project files"
+  },
+  {
+    "content": "Create PROJECT_VARIABLES.yaml from template",
+    "status": "pending",
+    "activeForm": "Creating project variables"
+  },
+  {
+    "content": "Customize PROJECT_VARIABLES.yaml for book-cataloger",
+    "status": "pending",
+    "activeForm": "Customizing project config"
+  },
+  {
+    "content": "Update project README with workspace references",
+    "status": "pending",
+    "activeForm": "Updating project README"
+  },
+  {
+    "content": "Verify project structure and organization",
+    "status": "pending",
+    "activeForm": "Verifying project structure"
+  },
+  {
+    "content": "Test that Claude Code loads framework correctly",
+    "status": "pending",
+    "activeForm": "Testing framework integration"
+  },
+  {
+    "content": "Commit migrated project",
+    "status": "pending",
+    "activeForm": "Committing migration"
+  }
+])
+```
+
+**Total Estimated**: 2 hours
+
+---
+
+#### Phase 4: Complete book-cataloger
+
+**Sprint-Based Todos**: Use sprint todo templates
+
+**For each sprint:**
+
+1. **Sprint Planning** - Use `.ai/templates/sprint-todos-template.md`
+   - CEO agent creates sprint plan
+   - Break objectives into todos per agent
+   - Estimate hours for each todo
+
+2. **Sprint Execution** - Agents work through todos
+   - Backend agent uses backend todos
+   - Frontend agent uses frontend todos
+   - Each agent: ONE todo in_progress at a time
+   - Mark completed immediately after finishing
+
+3. **Feature Development** - Use `.ai/templates/feature-todos-template.md`
+   - Research → Design → Implement → Test → Document
+   - Each phase has specific todos
+   - Track actual vs estimated hours
+
+4. **Bug Fixes** - Use `.ai/templates/bugfix-todos-template.md`
+   - Reproduce → Diagnose → Fix → Prevent → Verify
+   - Document learnings for similar bugs
+
+**Example Sprint Todos**:
+
+```python
+# Sprint 7A: Camera Scanner Improvements
+TodoWrite([
+  # Backend
+  {"content": "Research OpenCV barcode detection APIs", "status": "pending", ...},
+  {"content": "Implement ISBN-13 detection algorithm", "status": "pending", ...},
+  {"content": "Add image preprocessing pipeline", "status": "pending", ...},
+
+  # Frontend
+  {"content": "Design camera preview UI", "status": "pending", ...},
+  {"content": "Implement capture button", "status": "pending", ...},
+  {"content": "Add progress indicator", "status": "pending", ...},
+
+  # Testing
+  {"content": "Create test image dataset", "status": "pending", ...},
+  {"content": "Barcode accuracy benchmarks", "status": "pending", ...}
+])
+```
+
+**Total Estimated**: 1-2 weeks (multiple sprints)
+
+---
+
+#### Phase 5: Extract Learnings
+
+**Todos for extracting learnings:**
+
+```python
+TodoWrite([
+  {
+    "content": "Review all completed sprint retrospectives",
+    "status": "pending",
+    "activeForm": "Reviewing retrospectives"
+  },
+  {
+    "content": "Analyze todo patterns across all sprints",
+    "status": "pending",
+    "activeForm": "Analyzing todo patterns"
+  },
+  {
+    "content": "Identify what worked well (todo sizing, sequences)",
+    "status": "pending",
+    "activeForm": "Identifying successful patterns"
+  },
+  {
+    "content": "Document pain points and blockers",
+    "status": "pending",
+    "activeForm": "Documenting pain points"
+  },
+  {
+    "content": "Extract reusable todo workflows",
+    "status": "pending",
+    "activeForm": "Extracting workflows"
+  },
+  {
+    "content": "Create learning documents in .ai/meta/learnings/",
+    "status": "pending",
+    "activeForm": "Creating learning docs"
+  },
+  {
+    "content": "Create pattern documents in .ai/meta/patterns/",
+    "status": "pending",
+    "activeForm": "Creating pattern docs"
+  }
+])
+```
+
+**What to capture:**
+
+- **Todo Sizing Learnings**: What size todos worked best?
+- **Workflow Patterns**: What sequences were most effective?
+- **Common Blockers**: What caused todos to stay in_progress?
+- **Template Improvements**: How to improve todo templates?
+
+**Example Learning**:
+
+```markdown
+# Learning: Backend Todo Sizing
+
+**What Worked**:
+- 2-4 hour todos were perfect size
+- Research → Implement → Test sequence worked well
+- Breaking large tasks into specific pieces prevented blockers
+
+**What Didn't Work**:
+- "Build authentication system" was too large (3 days)
+- Should have been: 8 separate 2-4 hour todos
+
+**Pattern Discovered**:
+Always break feature into: Research (2h) → Design (4h) → Implement (8h) → Test (4h) → Document (2h)
+
+**Recommendation for v2.0**:
+Add this pattern as default feature todo template
+```
+
+**Total Estimated**: 2-3 days
+
+---
+
+#### Phase 6: Create Framework v2.0
+
+**Todos for framework improvements:**
+
+```python
+TodoWrite([
+  {
+    "content": "Review extracted todo patterns from book-cataloger",
+    "status": "pending",
+    "activeForm": "Reviewing todo patterns"
+  },
+  {
+    "content": "Design framework todo template system",
+    "status": "pending",
+    "activeForm": "Designing template system"
+  },
+  {
+    "content": "Create sprint-todos-template.yaml in framework",
+    "status": "pending",
+    "activeForm": "Creating sprint template"
+  },
+  {
+    "content": "Create feature-todos-template.yaml in framework",
+    "status": "pending",
+    "activeForm": "Creating feature template"
+  },
+  {
+    "content": "Create bugfix-todos-template.yaml in framework",
+    "status": "pending",
+    "activeForm": "Creating bugfix template"
+  },
+  {
+    "content": "Add todo workflow documentation to framework",
+    "status": "pending",
+    "activeForm": "Adding workflow docs"
+  },
+  {
+    "content": "Create /launch-sprint command with todo creation",
+    "status": "pending",
+    "activeForm": "Creating launch-sprint command"
+  },
+  {
+    "content": "Test todo templates with sample project",
+    "status": "pending",
+    "activeForm": "Testing todo templates"
+  }
+])
+```
+
+**What gets added to framework v2.0:**
+
+1. **Todo Templates**:
+   - `templates/sprint-todos.yaml`
+   - `templates/feature-todos.yaml`
+   - `templates/bugfix-todos.yaml`
+
+2. **Commands**:
+   - `/launch-sprint` - Creates sprint with pre-populated todos
+   - `/sprint-retrospective` - Analyzes todo patterns
+
+3. **Documentation**:
+   - `docs/TODO_WORKFLOW.md` (same as in template)
+   - Best practices from book-cataloger learnings
+
+**Total Estimated**: 1-2 weeks
+
+---
+
+#### Phase 7: Update Template v2.0
+
+**Todos for template improvements:**
+
+```python
+TodoWrite([
+  {
+    "content": "Update template to reference framework v2.0.0",
+    "status": "pending",
+    "activeForm": "Updating framework version"
+  },
+  {
+    "content": "Import improved todo templates from framework",
+    "status": "pending",
+    "activeForm": "Importing todo templates"
+  },
+  {
+    "content": "Update TODO_WORKFLOW.md with v2.0 improvements",
+    "status": "pending",
+    "activeForm": "Updating workflow docs"
+  },
+  {
+    "content": "Add todo workflow to QUICK_START.md",
+    "status": "pending",
+    "activeForm": "Updating quick start guide"
+  },
+  {
+    "content": "Test complete workflow with new templates",
+    "status": "pending",
+    "activeForm": "Testing new templates"
+  }
+])
+```
+
+**Total Estimated**: 1 day
+
+---
+
+#### Phase 8: Start Next Project with v2.0
+
+**Better todos from day one:**
+
+```python
+# New project starts with battle-tested todo templates!
+TodoWrite([
+  {
+    "content": "Use /launch-sprint to create Sprint 1",
+    "status": "pending",
+    "activeForm": "Launching Sprint 1"
+  },
+  # Sprint todos are auto-created from template
+  # Todos are already well-sized (learned from book-cataloger)
+  # Workflows are proven (extracted from real use)
+])
+```
+
+**Benefits**:
+- ✅ No more guessing at todo sizes
+- ✅ Proven workflows from day one
+- ✅ Common blockers already documented
+- ✅ Framework knows how to break down work
+
+**Result**: Next project is **2x faster** because todos are already optimized!
+
+---
+
+### Todo Best Practices (From Learnings)
+
+#### 1. Todo Sizing Rules
+
+**Good todo**: 2-4 hours
+```
+✅ "Implement user login endpoint"
+✅ "Write tests for login validation"
+```
+
+**Bad todo**: Days of work
+```
+❌ "Build authentication system"
+❌ "Implement frontend"
+```
+
+**Fix**: Break into 2-4 hour pieces
+
+#### 2. One In-Progress Rule
+
+**Always**: Exactly ONE todo `in_progress` at a time
+
+```python
+# ✅ CORRECT
+TodoWrite([
+  {"content": "Task A", "status": "in_progress", ...},
+  {"content": "Task B", "status": "pending", ...}
+])
+
+# ❌ WRONG - Multiple in_progress confuses everyone
+TodoWrite([
+  {"content": "Task A", "status": "in_progress", ...},
+  {"content": "Task B", "status": "in_progress", ...}
+])
+```
+
+#### 3. Immediate Completion
+
+**Mark completed** → **IMMEDIATELY** after finishing
+
+```python
+# ❌ WRONG - Batching completions
+# Agent finishes 3 todos, then updates all at once
+
+# ✅ CORRECT - Mark completed immediately
+# Agent finishes todo 1
+TodoWrite([{"content": "Todo 1", "status": "completed", ...}])
+# Agent finishes todo 2
+TodoWrite([{"content": "Todo 2", "status": "completed", ...}])
+```
+
+#### 4. Blocked Handling
+
+**Never** mark blocked todos as completed
+
+```python
+# ✅ CORRECT - Keep blocked todo in_progress, create resolution todo
+TodoWrite([
+  {
+    "content": "Implement feature X",
+    "status": "in_progress",  # Still working, hit blocker
+    ...
+  },
+  {
+    "content": "Resolve: Dependency version conflict",
+    "status": "pending",  # New todo for blocker
+    ...
+  }
+])
+```
+
+---
+
+### Knowledge Compounding Through Todos
+
+```
+Sprint 1: Guess at todo sizes
+    ↓
+Sprint 1 Retro: Analyze which sizes worked
+    ↓
+Sprint 2: Apply learnings (better sizes)
+    ↓
+Sprint 2 Retro: More patterns emerge
+    ↓
+Project Complete: Extract all patterns
+    ↓
+Framework v2.0: Patterns become templates
+    ↓
+Next Project: Perfect todos from day one
+    ↓
+KNOWLEDGE HAS COMPOUNDED
+```
+
+**Math**:
+- Sprint 1: 40% of todos were poorly sized (too big or too small)
+- Sprint 2: 25% poorly sized (applied learnings)
+- Sprint 3: 10% poorly sized (more learnings)
+- Framework v2.0: 5% poorly sized (templates from learnings)
+- Next Project Sprint 1: 5% poorly sized (starts with templates!)
+
+**Result**: Next project is **8x better** at todo sizing from day one!
+
+---
+
+### Quick Reference: Todo Workflow
+
+**Every Sprint**:
+
+1. **Planning**: Use sprint-todos-template.md
+2. **Execution**: One todo in_progress, mark completed immediately
+3. **Retrospective**: Analyze todo patterns, what worked/didn't
+4. **Learning Capture**: Document in .ai/meta/learnings/
+5. **Pattern Extraction**: Save reusable workflows in .ai/meta/patterns/
+
+**After Project**:
+
+1. **Review**: All captured learnings
+2. **Extract**: Common todo workflows
+3. **Create**: Templates for framework v2.0
+4. **Test**: Templates with sample project
+5. **Release**: Framework v2.0 with todo templates
+
+**Next Project**:
+
+1. **Use**: Framework v2.0 todo templates
+2. **Benefit**: From battle-tested workflows
+3. **Iterate**: Capture even more learnings
+4. **Compound**: Knowledge keeps growing
+
+---
+
+### Tools & Templates
+
+**Documentation**:
+- Complete workflow: `docs/TODO_WORKFLOW.md`
+- Templates: `.ai/templates/`
+  - `sprint-todos-template.md`
+  - `feature-todos-template.md`
+  - `bugfix-todos-template.md`
+
+**Examples**:
+- See `docs/TODO_WORKFLOW.md` for complete examples
+- Sprint 7A backend todos (Example 1)
+- Frontend UI breakdown (Example 2)
+
+---
+
+**This integration ensures every todo teaches the system. That's knowledge compounding in action!** 🚀
+
+---
+
 ## 📞 Support & Questions
 
 **Documentation:**

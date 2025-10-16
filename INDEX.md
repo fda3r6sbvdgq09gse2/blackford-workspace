@@ -13,6 +13,7 @@
 | **Configuration** | [STARTUP_VARIABLES.yaml](STARTUP_VARIABLES.yaml) | 1-125 | Single source of truth |
 | **Beginner Guide** | [docs/QUICK_START.md](docs/QUICK_START.md) | 1-100 | 15-minute walkthrough |
 | **Deep Customization** | [docs/CUSTOMIZATION.md](docs/CUSTOMIZATION.md) | 1-150 | Variable hierarchy, patterns |
+| **Todo Workflow** | [docs/TODO_WORKFLOW.md](docs/TODO_WORKFLOW.md) | 1-100 | Claude Code todo integration |
 | **Knowledge Graph** | [.ai/README.md](.ai/README.md) | 40-150 | `_used_in` system explained |
 | **Test Workflow** | [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md) | 100-300 | Complete testing guide |
 | **Upgrade Framework** | [scripts/upgrade-framework.sh](scripts/upgrade-framework.sh) | 1-50 | Automated upgrade script |
@@ -38,7 +39,10 @@ claude-workspace-template/
 │   ├── INDEX.md                       # AI resources index
 │   ├── README.md                      # Knowledge graph system (500 lines)
 │   ├── templates/
-│   │   └── PROJECT_VARIABLES.yaml     # Project config template (200 lines)
+│   │   ├── PROJECT_VARIABLES.yaml     # Project config template (200 lines)
+│   │   ├── sprint-todos-template.md   # Sprint todo template (150 lines)
+│   │   ├── feature-todos-template.md  # Feature todo template (250 lines)
+│   │   └── bugfix-todos-template.md   # Bugfix todo template (250 lines)
 │   └── meta/                          # Meta-level knowledge compounding
 │       ├── README.md                  # Meta-system explained (150 lines)
 │       ├── KNOWLEDGE_COMPOUNDING_SYSTEM.md  # Complete system (300 lines)
@@ -49,8 +53,9 @@ claude-workspace-template/
 │   ├── INDEX.md                       # Documentation index
 │   ├── QUICK_START.md                 # Beginner guide (575 lines)
 │   ├── CUSTOMIZATION.md               # Developer deep dive (850 lines)
-│   ├── UPGRADING.md                   # Framework upgrade guide
-│   └── ARCHITECTURE.md                # System architecture deep dive
+│   ├── TODO_WORKFLOW.md               # Todo workflow integration (750 lines)
+│   ├── UPGRADING.md                   # Framework upgrade guide (500 lines)
+│   └── ARCHITECTURE.md                # System architecture deep dive (600 lines)
 │
 ├── projects/                          # Your projects go here
 │   └── README.md                      # Project creation guide (300 lines)
